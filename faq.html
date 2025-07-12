@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wheel of Names FAQ - Complete Guide to Our Random Picker Tool</title>
+    <meta name="description" content="Get all your questions answered about the Wheel of Names tool. Detailed FAQ covering features, usage, customization, and troubleshooting for our random name picker wheel.">
+    <meta name="keywords" content="wheel of names FAQ, random picker questions, name wheel guide, spinner tool help, wheel of names tutorial">
+    <meta name="theme-color" content="#3369e8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #3369e8;
+            --secondary-color: #ff6b6b;
+            --light-color: #f8f9fa;
+            --success-color: #28a745;
+            --text-color: #333;
+            --text-light: #6c757d;
+            --border-radius: 12px;
+            --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            background-color: #f5f7fa;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background-color: white;
+            box-shadow: var(--box-shadow);
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            font-weight: 600;
+            font-size: 1.5rem;
+            color: var(--primary-color);
+        }
+
+        .logo img {
+            height: 40px;
+            margin-right: 10px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        nav a:hover {
+            color: var(--primary-color);
+        }
+
+        .faq-hero {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .faq-hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .faq-hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .faq-categories {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 40px;
+            overflow-x: auto;
+            padding-bottom: 10px;
+        }
+
+        .category-btn {
+            background: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 30px;
+            font-weight: 500;
+            cursor: pointer;
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+            white-space: nowrap;
+        }
+
+        .category-btn.active, .category-btn:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .faq-container {
+            background: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            padding: 40px;
+            margin-bottom: 60px;
+        }
+
+        .faq-section-title {
+            color: var(--primary-color);
+            margin-bottom: 30px;
+            font-size: 1.8rem;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .faq-section-title:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background-color: var(--primary-color);
+        }
+
+        .faq-item {
+            margin-bottom: 25px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 25px;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-question {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-question i {
+            transition: var(--transition);
+        }
+
+        .faq-question.active i {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            color: var(--text-light);
+            overflow: hidden;
+            max-height: 0;
+            transition: var(--transition);
+        }
+
+        .faq-question.active + .faq-answer {
+            max-height: 1000px;
+            padding-top: 10px;
+        }
+
+        .faq-answer ul, .faq-answer ol {
+            padding-left: 20px;
+        }
+
+        .faq-answer li {
+            margin-bottom: 8px;
+        }
+
+        .related-resources {
+            background-color: var(--light-color);
+            padding: 40px;
+            border-radius: var(--border-radius);
+            margin-bottom: 60px;
+        }
+
+        .resources-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .resource-card {
+            background: white;
+            padding: 25px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+        }
+
+        .resource-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .resource-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        footer {
+            background-color: var(--text-color);
+            color: white;
+            padding: 40px 0 20px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 30px;
+        }
+
+        .footer-section h3 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+        }
+
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-section li {
+            margin-bottom: 10px;
+        }
+
+        .footer-section a {
+            color: #ddd;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-section a:hover {
+            color: white;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            nav ul {
+                gap: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .faq-container {
+                padding: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <img src="logo.png" alt="Wheel of Names Logo">
+                <span>Wheel of Names</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="#getting-started">Getting Started</a></li>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#troubleshooting">Troubleshooting</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="faq-hero">
+        <div class="container">
+            <h1>Wheel of Names FAQ</h1>
+            <p>Find detailed answers to all your questions about our random name picker wheel tool</p>
+        </div>
+    </section>
+
+    <div class="container">
+        
+
+        <div class="faq-container">
+            <h2 class="faq-section-title" id="getting-started">Getting Started</h2>
+            
+            <div class="faq-item" data-category="getting-started">
+                <div class="faq-question">
+                    <span>How do I use the Wheel of Names for the first time?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Getting started with the Wheel of Names is simple and requires no registration:</p>
+                    <ol>
+                        <li><strong>Enter your items</strong>: In the text box, add each name, prize, or option on a separate line</li>
+                        <li><strong>Customize your wheel</strong> (optional): Change colors, spin duration, and text appearance</li>
+                        <li><strong>Spin the wheel</strong>: Click the "SPIN THE WHEEL" button to start the random selection</li>
+                        <li><strong>View results</strong>: The selected item will be displayed when the wheel stops</li>
+                    </ol>
+                    <p>The tool works immediately in your web browser with no downloads required. You can use it on any device with an internet connection.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item" data-category="getting-started">
+                <div class="faq-question">
+                    <span>Is there a limit to how many items I can add to the wheel?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Yes, there are some practical limits to ensure optimal performance:</p>
+                    <ul>
+                        <li><strong>Recommended maximum</strong>: 100 items for best visibility and performance</li>
+                        <li><strong>Absolute maximum</strong>: 200 items (text may become hard to read)</li>
+                        <li><strong>Minimum</strong>: At least 2 items for the wheel to function</li>
+                    </ul>
+                    <p>If you need to work with more than 200 items, we recommend:</p>
+                    <ol>
+                        <li>Dividing your list into multiple wheels</li>
+                        <li>Using our "Save Wheel" feature to create specialized wheels</li>
+                        <li>Running multiple rounds of selection if needed</li>
+                    </ol>
+                </div>
+            </div>
+            
+            <div class="faq-item" data-category="getting-started">
+                <div class="faq-question">
+                    <span>Do I need to create an account to use the Wheel of Names?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>No, the Wheel of Names is completely free to use without any account creation or registration. We designed it this way to:</p>
+                    <ul>
+                        <li>Provide instant access to all users</li>
+                        <li>Respect your privacy (we don't collect personal data)</li>
+                        <li>Keep the tool simple and easy to use</li>
+                    </ul>
+                    <p>All customization and spinning happens directly in your browser. If you want to save a particular wheel configuration, you can:</p>
+                    <ol>
+                        <li>Use the "Save Wheel" button to generate a shareable link</li>
+                        <li>Bookmark the page in your browser</li>
+                        <li>Copy the list of names/items to a text file for later use</li>
+                    </ol>
+                </div>
+            </div>
+            
+            <h2 class="faq-section-title" id="features">Features & Usage</h2>
+            
+            <div class="faq-item" data-category="features">
+                <div class="faq-question">
+                    <span>What are some creative ways to use the Wheel of Names?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>The Wheel of Names is versatile for both personal and professional use. Here are some creative applications:</p>
+                    
+                    <h4>In Education:</h4>
+                    <ul>
+                        <li><strong>Cold calling</strong>: Randomly select students to answer questions</li>
+                        <li><strong>Group assignments</strong>: Assign students to project teams fairly</li>
+                        <li><strong>Reading order</strong>: Determine who reads next in class</li>
+                        <li><strong>Reward system</strong>: Spin for classroom privileges or small prizes</li>
+                    </ul>
+                    
+                    <h4>For Businesses:</h4>
+                    <ul>
+                        <li><strong>Contest winners</strong>: Select raffle or giveaway winners transparently</li>
+                        <li><strong>Meeting participation</strong>: Choose who speaks next in brainstorming</li>
+                        <li><strong>Task delegation</strong>: Assign weekly office chores fairly</li>
+                        <li><strong>Training exercises</strong>: Randomly select scenarios for role-playing</li>
+                    </ul>
+                    
+                    <h4>Personal Use:</h4>
+                    <ul>
+                        <li><strong>Family decisions</strong>: Choose movie night picks or dinner options</li>
+                        <li><strong>Game night</strong>: Determine turns or select challenges</li>
+                        <li><strong>Fitness motivation</strong>: Randomly select workout exercises</li>
+                        <li><strong>Travel planning</strong>: Decide on vacation activities or destinations</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="faq-item" data-category="features">
+                <div class="faq-question">
+                    <span>How does the Wheel of Names ensure fair random selection?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Our Wheel of Names uses advanced algorithms to guarantee truly random and fair selections:</p>
+                    
+                    <h4>Technical Implementation:</h4>
+                    <ul>
+                        <li><strong>Browser-based randomization</strong>: Uses JavaScript's cryptographically secure random number generator</li>
+                        <li><strong>Weighted distribution</strong>: Each segment has equal probability regardless of wheel size</li>
+                        <li><strong>Deceleration algorithm</strong>: Natural stopping pattern that doesn't favor any position</li>
+                    </ul>
+                    
+                    <h4>Fairness Features:</h4>
+                    <ul>
+                        <li><strong>No memory</strong>: Each spin is completely independent of previous spins</li>
+                        <li><strong>Visual verification</strong>: Users can watch the physical spin and stopping point</li>
+                        <li><strong>Transparent process</strong>: No hidden weights or preferences in the code</li>
+                    </ul>
+                    
+                    <p>For situations requiring absolute fairness (like official contests), we recommend:</p>
+                    <ol>
+                        <li>Recording the spin session for verification</li>
+                        <li>Having multiple witnesses observe the selection</li>
+                        <li>Using the "Share" feature to send results to all participants</li>
+                    </ol>
+                </div>
+            </div>
+            
+            <h2 class="faq-section-title" id="customization">Customization Options</h2>
+            
+            <div class="faq-item" data-category="customization">
+                <div class="faq-question">
+                    <span>What customization options are available for the wheel?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>The Wheel of Names offers extensive customization to suit your needs:</p>
+                    
+                    <h4>Visual Customization:</h4>
+                    <ul>
+                        <li><strong>Color schemes</strong>: Choose from 6 preset colors or add custom HEX colors</li>
+                        <li><strong>Text appearance</strong>: Select white or black text for better contrast</li>
+                        <li><strong>Wheel size</strong>: Adjust between small, medium, and large display sizes</li>
+                        <li><strong>Spin duration</strong>: Set how long the wheel spins (2-10 seconds)</li>
+                    </ul>
+                    
+                    <h4>Functional Customization:</h4>
+                    <ul>
+                        <li><strong>Multiple wheels</strong>: Save different configurations for various purposes</li>
+                        <li><strong>Result display</strong>: Shows the winner with optional confetti animation</li>
+                        <li><strong>Shareable links</strong>: Generate URLs that preserve your custom settings</li>
+                    </ul>
+                    
+                    <h4>Advanced Tips:</h4>
+                    <ol>
+                        <li>Use contrasting colors for better visibility in presentations</li>
+                        <li>Shorter spin durations (3-5 seconds) work best for live events</li>
+                        <li>Save your brand colors as custom colors for consistent use</li>
+                        <li>Combine with our fullscreen mode for maximum visibility</li>
+                    </ol>
+                </div>
+            </div>
+            
+            <h2 class="faq-section-title" id="troubleshooting">Troubleshooting</h2>
+            
+            <div class="faq-item" data-category="troubleshooting">
+                <div class="faq-question">
+                    <span>Why isn't my wheel spinning when I click the button?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>If your wheel isn't spinning, try these troubleshooting steps:</p>
+                    
+                    <h4>Common Issues and Solutions:</h4>
+                    <ul>
+                        <li><strong>No items entered</strong>: Ensure you've added at least 2 names/items to the wheel</li>
+                        <li><strong>Browser issues</strong>: Try refreshing the page or using a different browser</li>
+                        <li><strong>Ad blockers</strong>: Disable any ad blockers or script blockers that might interfere</li>
+                        <li><strong>Slow internet</strong>: Wait a moment for all assets to load completely</li>
+                    </ul>
+                    
+                    <h4>Advanced Troubleshooting:</h4>
+                    <ol>
+                        <li>Clear your browser cache and cookies for our site</li>
+                        <li>Check if JavaScript is enabled in your browser settings</li>
+                        <li>Try using the Chrome or Firefox browser for best compatibility</li>
+                        <li>Contact us with details about your device and browser version</li>
+                    </ol>
+                    
+                    <p>If the problem persists, you can try our <a href="#">basic version</a> of the wheel which has fewer features but more reliable performance on older devices.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item" data-category="troubleshooting">
+                <div class="faq-question">
+                    <span>How do I recover a saved wheel configuration?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>If you've saved a wheel configuration but can't access it, follow these steps:</p>
+                    
+                    <h4>Recovery Methods:</h4>
+                    <ul>
+                        <li><strong>Bookmark</strong>: Check your browser bookmarks if you saved the link</li>
+                        <li><strong>Browser history</strong>: Search your history for "spin-names.vercel.app"</li>
+                        <li><strong>Email</strong>: Look for messages where you might have shared the link</li>
+                        <li><strong>Local storage</strong>: Some configurations may be saved in your browser's local storage</li>
+                    </ul>
+                    
+                    <h4>Prevention for Next Time:</h4>
+                    <ol>
+                        <li>When saving, email the link to yourself as backup</li>
+                        <li>Bookmark the page in multiple browsers</li>
+                        <li>Take a screenshot of your wheel settings</li>
+                        <li>Copy the list of names to a separate document</li>
+                    </ol>
+                    
+                    <p>Note: For privacy reasons, we cannot recover lost wheel configurations from our servers as all data is stored locally in your browser.</p>
+                </div>
+            </div>
+        </div>
+
+       
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Wheel of Names</h3>
+                    <p>The free, easy-to-use random name picker wheel for fair selections and fun decisions.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Press</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="#">Teacher Resources</a></li>
+                        <li><a href="#">Business Uses</a></li>
+                        <li><a href="#">API Documentation</a></li>
+                        <li><a href="#">Help Center</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Legal</h3>
+                    <ul>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Cookie Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 Wheel of Names. All rights reserved. | Designed for fairness and fun</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // FAQ toggle functionality
+            const faqQuestions = document.querySelectorAll('.faq-question');
+            
+            faqQuestions.forEach(question => {
+                question.addEventListener('click', function() {
+                    this.classList.toggle('active');
+                    const answer = this.nextElementSibling;
+                    
+                    if (this.classList.contains('active')) {
+                        answer.style.maxHeight = answer.scrollHeight + 'px';
+                    } else {
+                        answer.style.maxHeight = '0';
+                    }
+                    
+                    // Rotate icon
+                    const icon = this.querySelector('i');
+                    icon.style.transform = this.classList.contains('active') ? 'rotate(180deg)' : 'rotate(0)';
+                });
+            });
+            
+            // Category filtering
+            const categoryBtns = document.querySelectorAll('.category-btn');
+            
+            categoryBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    // Update active button
+                    categoryBtns.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    const category = this.dataset.category;
+                    const faqItems = document.querySelectorAll('.faq-item');
+                    
+                    faqItems.forEach(item => {
+                        if (category === 'all' || item.dataset.category === category) {
+                            item.style.display = 'block';
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+                    
+                    // Scroll to top of FAQ section
+                    document.querySelector('.faq-container').scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+            
+            // Open FAQ item if URL has hash
+            if (window.location.hash) {
+                const targetSection = document.querySelector(window.location.hash);
+                if (targetSection) {
+                    // Find first question in section and open it
+                    const firstQuestion = targetSection.nextElementSibling.querySelector('.faq-question');
+                    if (firstQuestion) {
+                        firstQuestion.click();
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html> 
