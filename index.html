@@ -24,6 +24,50 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
     <style>
+         .banner {
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, #2AABEE 0%, #229ED9 100%);
+            border-radius: 5px;
+            padding: 5px;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+            color: white;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            text-decoration: none;
+            font-size: 10px;
+            line-height: 1.2;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .banner:before {
+            content: "";
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            width: 30px;
+            height: 30px;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm5 15.5L15.5 17l-2.5-3-3 3.5L8.5 12l-2 1.5V7h13v10.5z"/></svg>') no-repeat;
+            opacity: 0.2;
+        }
+        
+        .telegram-icon {
+            width: 20px;
+            height: 20px;
+            margin-bottom: 5px;
+        }
+        
+        .highlight {
+            font-weight: bold;
+            font-size: 12px;
+            margin: 3px 0;
+        }
         /* Additional CSS for new elements */
         .how-it-works {
             padding: 60px 0;
@@ -226,6 +270,18 @@
     </style>
 </head>
 <body>
+
+<a href="https://aziqdev.com/" class="banner">
+        <svg class="telegram-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm5 15.5L15.5 17l-2.5-3-3 3.5L8.5 12l-2 1.5V7h13v10.5z"/>
+        </svg>
+        <div class="highlight">Need a</div>
+        <div>Telegram Bot</div>
+        <div>Developer?</div>
+        <div class="highlight">Hire me here</div>
+    </a>
+
+
     <header>
         <div class="container header-content">
             <div class="logo">
